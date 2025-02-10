@@ -4,19 +4,19 @@
 #include <iostream>
 using namespace std;
 
-enum months {
-    Январь,
-    Февраль,
-    Март,
-    Апрель,
-    Май,
-    Июнь, 
-    Июль,
-    Август,
-    Сентябрь, 
-    Октябрь,
-    Ноябрь,
-    Декабрь
+enum class months {
+    January = 1,
+    February,
+    March,
+    April,
+    May,
+    June,
+    July,
+    August,
+    September,
+    October,
+    November,
+    December
 };
 
 int main(int argc, char** argv)
@@ -26,48 +26,49 @@ int main(int argc, char** argv)
     while (true) {
         cout << "Введите номер месяца: ";
         cin >> a;
-        switch (a) {
-        case (0):
-            cout << "До свидания"<<endl;
+        if (a == 0) {
+            cout << "До свидания" << endl;
             return false;
-            break;
-        case (1):
+        }
+        months month = static_cast<months>(a); 
+        switch (month) {
+        case (months::January):
             cout << "Январь" << endl;
             break;
-        case (2):
+        case (months::February):
             cout << "Февраль" << endl;
             break;
-        case (3):
+        case (months::March):
             cout << "Март" << endl;
             break;
-        case (4):
+        case (months::April):
             cout << "Апрель" << endl;
             break;
-        case (5):
+        case (months::May):
             cout << "Май" << endl;
             break;
-        case (6):
+        case (months::June):
             cout << "Июнь" << endl;
             break;
-        case (7):
+        case (months::July):
             cout << "Июль" << endl;
             break;
-        case (8):
+        case (months::August):
             cout << "Август" << endl;
             break;
-        case (9):
+        case (months::September):
             cout << "Сентябрь" << endl;
             break;
-        case (10):
+        case (months::October):
             cout << "Октябрь" << endl;
             break;
-        case (11):
+        case (months::November):
             cout << "Ноябрь" << endl;
             break;
-        case (12):
+        case (months::December):
             cout << "Декабрь" << endl;
             break;
-        default: cout << "Неправильный номер!";
+        default: cout << "Неправильный номер!" << endl;
         }
     }
 }
